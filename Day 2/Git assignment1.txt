@@ -1,0 +1,8 @@
+1. create new local repository
+2. add two files in working copy
+3. add files created in step two to local repo
+4. modify file 1 and add third file
+5. add modified file and newly created file to stange area
+6. move both the files from staged area
+7. reenter both files in stage area
+8. store in local repo
