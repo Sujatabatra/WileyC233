@@ -6,3 +6,14 @@
 6. move both the files from staged area
 7. reenter both files in stage area
 8. store in local repo
+9. create new branch with name "NewBranch"
+10. Checkout NewBranch
+11. add two more files in New Branch
+12. modify first firle in New Branch
+13. commit changes in new branch
+14. checkout master branch
+15. add new file in master branch and store in local repo
+16. go to new Branch modify file 2
+17. commit new branch changes
+18. merge New Branch with master
+
