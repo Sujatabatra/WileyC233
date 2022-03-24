@@ -1,0 +1,4 @@
+ClassName : PascalCase
+methodName : camelCase
+variableName : camelCase
+packagename : lowercase
