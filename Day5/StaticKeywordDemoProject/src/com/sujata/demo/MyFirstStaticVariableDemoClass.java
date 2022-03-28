@@ -15,6 +15,10 @@ class DemoFirst{
 }
 public class MyFirstStaticVariableDemoClass {
 	static DemoFirst df;
+	DemoFirst obj;
+	void someMethod() {
+		obj.value2=90;
+	}
 	public static void main(String args[]) {
 //		DemoFirst.value2=10;
 		
