@@ -28,6 +28,7 @@ class DemoSecond{
 	public static void setValue2(int value2) {
 		DemoSecond.value2 = value2;
 	}
+	
 	public void showAll() {
 		System.out.println("value 1: "+value1);
 		System.out.println("value 2: "+value2);
