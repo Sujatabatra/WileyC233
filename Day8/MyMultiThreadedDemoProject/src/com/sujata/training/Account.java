@@ -5,12 +5,12 @@ public class Account implements Runnable {
 	private static int balance = 1000;
 
 	@Override
-	public void run() {
+	/*synchronized*/ public void run() {
 
 		//class Level Lock
-//		synchronized (Account.class) {
+		synchronized (Account.class) {
 	//object Level Locking
-		synchronized (this) {
+//		synchronized (this) {
 	
 			if (balance >= 800) {
 				System.out.println(Thread.currentThread().getName()
