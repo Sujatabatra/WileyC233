@@ -16,6 +16,8 @@ public class ReadObjectFromFileDemoClass {
 			Person person=(Person)objectInputStream.readObject();
 			
 			System.out.println("Person Details : "+person.getPersonId()+"  "+person.getPersonName());
+			
+			System.out.println("Person : "+person);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
