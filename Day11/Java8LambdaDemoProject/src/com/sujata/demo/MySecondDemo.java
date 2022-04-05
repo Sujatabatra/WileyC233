@@ -1,5 +1,7 @@
 package com.sujata.demo;
 
+import java.util.function.DoubleUnaryOperator;
+
 @FunctionalInterface
 interface Shape {
 	double area(double value);
@@ -31,6 +33,9 @@ public class MySecondDemo {
 		
 		System.out.println("Area of Sqaure : " + sqaure.area(4));
 
+		DoubleUnaryOperator circle=value->3.142*value*value;
+		System.out.println("Area of Circle : "+circle.applyAsDouble(5));
+		
 	}
 
 }
