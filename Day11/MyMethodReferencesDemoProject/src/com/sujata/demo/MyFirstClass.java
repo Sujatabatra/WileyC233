@@ -3,6 +3,7 @@ package com.sujata.demo;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 
+//Method Reference for static methods
 class Addition{
 	public static int add(int number1,int number2) {
 		return number1+number2;
