@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class BookMain {
 
+	
 	public static void main(String[] args) {
 		
 		
@@ -18,14 +19,17 @@ public class BookMain {
 		List<Book> expensiveBooks=bookSearch.searchBooks(new ExpensiveBookPredicate());
 		System.out.println(expensiveBooks);
 		
-		List<Book> thickBooks=bookSearch.searchBooks(new BookPredicate() {
-			@Override
-			public boolean test(Book book) {
-				
-				return book.getNoOfPages()>2500;
-			}
-		});
+//		List<Book> thickBooks=bookSearch.searchBooks(new BookPredicate() {
+//			@Override
+//			public boolean test(Book book) {
+//				
+//				return book.getNoOfPages()>2500;
+//			}
+//		});
 
+		List<Book> thickBooks=bookSearch.searchBooks(book->book.getNoOfPages()>2500);
+			
+		
 	}
 
 }
