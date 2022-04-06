@@ -22,6 +22,12 @@ public class MyFirstClass {
 				.count();
 		
 		System.out.println("Total No of even Elements in a list : "+total);
+		
+		myList.stream()
+		.filter(element->element%2==0)   //intermediate operation
+		.map(element->element*element)
+		.forEach(System.out::println);   //terminal operation
+		
 	}
 
 }
