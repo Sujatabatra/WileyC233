@@ -34,6 +34,8 @@ public class MySecondClass {
 	
 //		Function<String, Integer> function=(str)->str.length();
 		Function<String, Integer> function=String::length;
+		
+		
 	}
 
 }
