@@ -11,4 +11,6 @@ public interface EmployeeService {
 	List<Employee> getAllEmployees();
 	Optional<Employee> searchEmployeeById(int empId);
 	Optional<PaySlip> generateEmployeePaySlip(int empId);
+	boolean deleteEmployeeById(int id);
+	boolean incrementSalary(int id,int salary);
 }

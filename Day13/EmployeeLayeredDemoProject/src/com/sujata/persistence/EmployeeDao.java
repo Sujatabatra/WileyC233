@@ -9,4 +9,6 @@ public interface EmployeeDao {
 
 	List<Employee> getAllRecords();
 	Optional<Employee> getRecordById(int id);
+	Optional<Employee> deleteRecordById(int id);
+	Optional<Employee> incrementSalaryById(int id,int increment);
 }

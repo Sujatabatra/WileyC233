@@ -27,4 +27,22 @@ public class EmployeeDaoImpl implements EmployeeDao {
 //		return Optional.ofNullable(EmployeeDataBase.getEmployeeList().get(id));
 	}
 
+	@Override
+	public Optional<Employee> deleteRecordById(int id) {
+		Employee employee=EmployeeDataBase.getEmployeeList().remove(id);
+		return Optional.ofNullable(employee);
+		
+	}
+
+	@Override
+	public Optional<Employee> incrementSalaryById(int id, int increment) {
+		Employee employee=EmployeeDataBase.getEmployeeList().get(id);
+		
+		if(employee!=null) {
+			employee.setEmpSalary(employee.getEmpSalary()+increment);
+			EmployeeDataBase.getEmployeeList().put(id, employee);
+		}
+		return Optional.ofNullable(employee);
+	}
+
 }

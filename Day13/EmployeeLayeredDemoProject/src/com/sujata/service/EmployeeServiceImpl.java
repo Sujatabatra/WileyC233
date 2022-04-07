@@ -38,4 +38,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return Optional.ofNullable(payslip);
 	}
 
+	@Override
+	public boolean deleteEmployeeById(int id) {
+		if(employeeDao.deleteRecordById(id).isPresent())
+			return true;
+		return false;
+	}
+
+	@Override
+	public boolean incrementSalary(int id, int salary) {
+		if(employeeDao.incrementSalaryById(id, salary).isPresent())
+			return true;
+		return false;
+	}
+
 }
