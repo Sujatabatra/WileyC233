@@ -25,7 +25,7 @@ public class CircularLinkedList {
 			// if list is already there, move head to the last node and attach new node in
 			// the last
 			Node lastNode = head;
-			while (lastNode.next != null) {
+			while (lastNode.next != head) {
 				lastNode = lastNode.next;
 			}
 //			After while last node is on last node, attach new node to the last node
@@ -50,8 +50,15 @@ public class CircularLinkedList {
 	public boolean delete(int data) {
 		if(head!=null) {
 			//want to delete first Node
-			if(head.data==data)
+			if(head.data==data) {
+				Node lastNode=head;
+				while(lastNode.next!=head)
+					lastNode=lastNode.next;
+				
 				head=head.next;
+				lastNode.next=head;
+				
+			}
 			else {
 				Node prev=head;
 				while(prev.next!=head && prev.next.data!=data) {
