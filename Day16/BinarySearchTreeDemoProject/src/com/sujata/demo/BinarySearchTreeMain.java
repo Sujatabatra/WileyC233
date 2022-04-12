@@ -13,6 +13,9 @@ public class BinarySearchTreeMain {
 		binarySearchTree.insert(90);
 		
 		binarySearchTree.inorder();
+		
+		binarySearchTree.deleteKey(17);
+		binarySearchTree.inorder();
 
 	}
 
