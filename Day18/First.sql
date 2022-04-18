@@ -26,3 +26,35 @@ values(2,'BBBB',75000,'Sr. Associate','IT');
 
 -- DQL
 select * from employee;
+
+-- projection : selection of columns
+select empId,empName,department,designation,salary
+from employee;
+
+select empId,empName
+from employee;
+
+-- selection : selection of rows
+select *
+from employee
+where department='IT';
+
+select empId,empName,department
+from employee
+where department='it';
+
+create table dept(
+id int primary key,
+name varchar(25));
+
+
+insert into employee(empId,empName,salary,designation,department)
+values(3,'CCCC',55000,'Associate','IT'),
+(4,'DDDD',150000,'Manager','HR'),
+(5,'EEEE',85000,'Sr. Associate','HR');
+
+insert ignore into employee(empId,empName,salary,designation,department)
+values(6,'FFFF',15000,'Executive','IT'),
+(7,'GGGG',50000,'Sr. Executive','Sales'),
+(5,'HHHH',185000,'Manager','Sales');
+
