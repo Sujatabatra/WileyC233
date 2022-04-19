@@ -40,14 +40,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public boolean deleteEmployeeById(int id) {
-		if(employeeDao.deleteRecordById(id).isPresent())
+		if(employeeDao.deleteRecordById(id)>0)
 			return true;
 		return false;
 	}
 
 	@Override
 	public boolean incrementSalary(int id, int salary) {
-		if(employeeDao.incrementSalaryById(id, salary).isPresent())
+		if(employeeDao.incrementSalaryById(id, salary)>0)
 			return true;
 		return false;
 	}
