@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- setter injection -->
+	<bean id="ManiDeep" class="com.sujata.producer.Dancer">
+		<property name="danceStyle" value="Hip Hop"></property>
+	</bean>
+
+	<!-- constructor injection -->
+	<bean id="Harshit" class="com.sujata.producer.Singer">
+		<constructor-arg name="song" value="Khamoshiya"></constructor-arg>
+	</bean>
+
+	<bean id="Girish" class="com.sujata.producer.Singer">
+		<constructor-arg name="song" value="Excuse Us!"></constructor-arg>
+	</bean>
+	<bean id="Hemalatha" class="com.sujata.producer.Juggler">
+		<property name="balls" value="3"></property>
+	</bean>
+
+	<bean id="guitar" class="com.sujata.producer.Guitar"></bean>
+	<bean id="drum" class="com.sujata.producer.Drum"></bean>
+	<bean id="tabla" class="com.sujata.producer.Tabla"></bean>
+	
+	<bean id="Himanshu" class="com.sujata.producer.Instrumentalist">
+		<constructor-arg name="instrument" ref="tabla"></constructor-arg>
+	</bean>
+</beans>
