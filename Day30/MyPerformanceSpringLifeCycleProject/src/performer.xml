@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="Neha" class="com.sujata.producer.Dancer" init-method="customInit"  destroy-method="customDestroy">
+		<property name="danceStyle" value="HipHop"></property>
+	</bean>
+	
+	<bean id="Saransh" class="com.sujata.producer.Dancer">
+		<property name="danceStyle" value="Free"></property>
+	</bean>
+	
+	
+	<bean id="Harshit" class="com.sujata.producer.Singer" ></bean>
+	<bean id="Hemalatha" class="com.sujata.producer.Juggler"></bean>
+
+	<bean class="com.sujata.producer.PerformerInitilization"></bean>
+</beans>
