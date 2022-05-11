@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- setter injection -->
+	<bean id="ManiDeep" class="com.sujata.producer.Dancer">
+		<property name="danceStyles">
+			<list>
+				<value>Hip Hop</value>
+				<value>Folk Dance</value>
+				<value>Classical</value>
+				<value>Salsa</value>
+				<value>Kathakali</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- constructor injection -->
+	<bean id="Harshit" class="com.sujata.producer.Singer">
+		<constructor-arg name="songs">
+			<set>
+				<value>Khamoshiya</value>
+				<value>Channa Mereya</value>
+				<value>Dil ka Dariya</value>
+				<value>Brown Munde</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="Sandesh" class="com.sujata.producer.MultiTalenter">
+		<constructor-arg name="songsDanceStyles">
+			<props>
+				<prop key="Dil Ka Dariya">Kathak</prop>
+				<prop key="Chamak Chalo">Folk Dance</prop>
+				<prop key="Jalebi Bai">Belly</prop>
+				<prop key="Kacha Badam">Robotics</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+	<bean id="Hemalatha" class="com.sujata.producer.Juggler">
+		<property name="balls" value="3"></property>
+	</bean>
+
+	<bean id="guitar" class="com.sujata.producer.Guitar"></bean>
+	<bean id="drum" class="com.sujata.producer.Drum"></bean>
+	<bean id="tabla" class="com.sujata.producer.Tabla"></bean>
+
+	<bean id="Himanshu" class="com.sujata.producer.Instrumentalist">
+		<constructor-arg name="songsInstruments">
+			<map>
+				<entry key="Kal Ho Na Ho" value-ref="guitar"></entry>
+				<entry key="Chand Si Mehbooba" value-ref="tabla"></entry>
+				<entry key="Jeena Jeena" value-ref="guitar"></entry>
+				<entry key="Lungi Dance" value-ref="drum"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>
