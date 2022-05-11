@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ManiDeep" class="com.sujata.producer.Dancer" p:danceStyle="Hip Hop">
+	</bean>
+	
+	<bean id="Harshit" class="com.sujata.producer.Singer" c:song="Khamoshiya">
+	</bean>
+	
+	<bean id="Girish" class="com.sujata.producer.Singer" c:song="Excuse Us">
+	</bean>
+	
+	<bean id="Hemalatha" class="com.sujata.producer.Juggler" p:balls="3">
+	</bean>
+
+	<bean id="guitar" class="com.sujata.producer.Guitar"></bean>
+	<bean id="drum" class="com.sujata.producer.Drum"></bean>
+	<bean id="tabla" class="com.sujata.producer.Tabla"></bean>
+	
+	<bean id="Himanshu" class="com.sujata.producer.Instrumentalist" c:instrument-ref="guitar">
+	</bean>
+
+</beans>
