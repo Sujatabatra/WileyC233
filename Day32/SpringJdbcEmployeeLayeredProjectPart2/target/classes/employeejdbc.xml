@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Registering the driver and establishing the connection and taking care 
+		of exceptions associated with these steps -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/wileyc233"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="sujata"></property>
+	</bean>
+	
+	<!-- Statement creation executions and handling SQL Exception -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" c:dataSource-ref="dataSource"></bean>
+
+	<bean id="empDao" class="com.sujata.persistence.EmployeeDaoImpl"
+		 p:jdbcTemplate-ref="jdbcTemplate"></bean>
+
+	<bean id="empService"
+		class="com.sujata.service.EmployeeServiceImpl"
+		p:employeeDao-ref="empDao"></bean>
+
+	<bean id="empPresentation"
+		class="com.sujata.presentation.EmployeePresentationImpl"
+		c:employeeService-ref="empService"></bean>
+</beans>
