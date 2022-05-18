@@ -18,11 +18,9 @@
 		<option value="HR">HR</option>
 		<option value="Purchase">Purchase</option>
 	</select><br><br>
-	select Designation : <input type="radio" th:field="*{empDesignation}" value="Executive">Executive
-	<input type="radio" th:field="*{empDesignation}" value="Associate">Associate
-	<input type="radio" th:field="*{empDesignation}" value="Sr. Associate">Sr. Associate
-	<input type="radio" th:field="*{empDesignation}" value="Manager">Manager
-	<input type="radio" th:field="*{empDesignation}" value="Sr. Manager">Sr. Manager<br><br>
+	select Designation : <input type="radio" th:field="*{empDesignation}"
+	th:each="desig : ${empDesignations}" th:value="${desig}" th:text="${desig}">
+	<br><br>
 	
 	Enter Salary : <input type="text" th:field="*{empSalary}"><br><br>
 

@@ -2,6 +2,7 @@ package com.sujata.controllers;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -117,5 +118,14 @@ public class EmployeeController {
 		modelAndView.setViewName("output");
 		
 		return modelAndView;
+	}
+	
+	@ModelAttribute("empDesignations")
+	public List<String> getDesignationNames(){
+		return employeeService.getAllEmployees()
+		.stream()
+		.map(Employee::getEmpDesignation)
+		.distinct()
+		.collect(Collectors.toList());
 	}
 }
