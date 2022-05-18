@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Employee Details</h1>
+<form action="#"  th:action="@{./saveEmployee}" th:object="${command}" method="post">
+	
+	Enter Employee ID : <input type="text" th:field="*{empId}"><br><br>
+	
+	Enter Employee Name : <input type="text" th:field="*{empName}"><br><br>
+	
+	Select Department : <select th:field="*{empDepartment}">
+		<option th:field="*{empDepartment}"
+	th:each="deptt : ${empDepartments}" th:value="${deptt}" th:text="${deptt}"></option>
+	</select><br><br>
+	select Designation : <input type="radio" th:field="*{empDesignation}"
+	th:each="desig : ${empDesignations}" th:value="${desig}" th:text="${desig}">
+	<br><br>
+	
+	Enter Salary : <input type="text" th:field="*{empSalary}"><br><br>
+
+	<input type="submit" value="Save Employee">
+</form>
+</body>
+</html>
