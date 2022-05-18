@@ -5,12 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome to Employee Management System</h1>
+<h1 style="text-align: center; text-decoration: underline;">Welcome to Employee Management System!</h1>
+<h2 style="color:blue" th:text="'Hi '+${session.user.userName}+'!'"></h2>
 <form action="./searchEmp" method="get">
 	Enter Employee ID :<input type="text" name="empId"><br><br>
 	<input type="submit" value="Search">
 </form>
 <br><br>
-<a href="./">Go to Main Page</a>
+<a href="./home">Go to Main Page</a>
 </body>
 </html>

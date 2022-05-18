@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sujata.entity.Employee;
@@ -20,6 +21,7 @@ import com.sujata.service.EmployeeService;
 import com.sujata.service.LoginService;
 
 @Controller
+@SessionAttributes({"user"})  //pre- requisite : that object must be on request scope 
 public class EmployeeController {
 
 	@Autowired
@@ -33,10 +35,12 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping("/login")
-	public ModelAndView menuPageController(@ModelAttribute("usr") User user,HttpSession session) {
+	public ModelAndView menuPageController(@ModelAttribute("usr") User user) {
 		if(loginService.loginCheck(user)) {
-			session.setAttribute("user", user);
-			return new ModelAndView("index");
+			ModelAndView modelAndView=new ModelAndView();
+			modelAndView.addObject("user", user);// Object at request scope
+			modelAndView.setViewName("index");
+			return modelAndView;
 //			return new ModelAndView("index","user",user);  // Objects are at request scope
 		}
 		else {
@@ -151,5 +155,11 @@ public class EmployeeController {
 		.map(Employee::getEmpDepartment)
 		.distinct()
 		.collect(Collectors.toList());
+	}
+	
+	@RequestMapping("/logout")
+	public ModelAndView logoutController(HttpSession session) {
+		session.invalidate();
+		return new ModelAndView("redirect:/");
 	}
 }

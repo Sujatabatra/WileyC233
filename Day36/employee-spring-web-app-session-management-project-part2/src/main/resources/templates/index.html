@@ -3,15 +3,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link th:href="@{/styles/main.css}" rel="stylesheet">
 </head>
 <body>
 
-<h1 style="text-align: center; text-decoration: underline;">Welcome to Employee Management System!</h1>
-<h2 style="color:blue" th:text="'Hi '+${session.user.userName}+'!'"></h2>
+<h1 >Welcome to Employee Management System!</h1>
+<h2 th:text="'Hi '+${session.user.userName}+'!'"></h2>
 <a href="./search">Search Employee By ID</a><br><br>
 <a href="./allEmps">List All Employees</a><br><br>
 <a href="./insertEmp">Add New Employee</a><br><br>
 <a href="./delete">Delete Employee By ID</a><br><br>
 <a href="">Increment Employee Salary</a><br><br>
+<a href="./logout">Log Out</a><br><br>
 </body>
 </html>

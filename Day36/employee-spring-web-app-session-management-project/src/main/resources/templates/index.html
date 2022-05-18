@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
 
-<h1>Welcome to Employee Management System!</h1>
+<h1 style="text-align: center; text-decoration: underline;">Welcome to Employee Management System!</h1>
+<h2 style="color:blue" th:text="'Hi '+${session.user.userName}+'!'"></h2>
 <a href="./search">Search Employee By ID</a><br><br>
 <a href="./allEmps">List All Employees</a><br><br>
 <a href="./insertEmp">Add New Employee</a><br><br>
