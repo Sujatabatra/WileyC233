@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,10 +17,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 @Entity
+@JsonAutoDetect(fieldVisibility = Visibility.ANY)
 public class Employee {
 
 	@Id 
-	private int empId;
+	private Integer empId;
 	
 	
 	private String empName;

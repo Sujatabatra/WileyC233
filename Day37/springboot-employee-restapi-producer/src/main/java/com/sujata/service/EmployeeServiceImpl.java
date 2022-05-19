@@ -28,40 +28,33 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public boolean deleteEmployee(int empId) {
-		try {
+	public Employee deleteEmployee(int empId) {
+		Optional<Employee> emplOptional = employeeDao.findById(empId);
+		if (emplOptional.isPresent())
 			employeeDao.deleteById(empId);
-			return true;
-		} catch (EmptyResultDataAccessException exception) {
-			return false;
-		}
+		return emplOptional.orElse(null);
+
 	}
 
 	@Override
-	public boolean insertEmployee(Employee employee) {
+	public Employee insertEmployee(Employee employee) {
 
-		try {
-			if (employeeDao.existsById(employee.getEmpId()))
-				return false;
-			employeeDao.save(employee);
-			return true;
-		} catch (Exception exception) {
-			return false;
-		}
+		return employeeDao.save(employee);
+
 	}
 
 	@Override
-	public boolean incrementSalary(int id, double increment) {
-		try {
+	public Employee incrementSalary(int id, double increment) {
+		Optional<Employee> emplOptional = employeeDao.findById(id);
+		if (emplOptional.isPresent()) {
 			employeeDao.updateSalary(id, increment);
-			return true;
-		} catch (Exception exception) {
-			exception.printStackTrace();
-			return false;
+			Employee emp=emplOptional.get();
+			emp.setEmpSalary(emp.getEmpSalary()+increment);
+			return emp;
+			
 		}
+			return null;
+		
 	}
-
-
-	
 
 }
