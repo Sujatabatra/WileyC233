@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/styles/main.css}" rel="stylesheet">
+</head>
+<body>
+
+<h1>Welcome to Employee Management System</h1>
+
+<form action="#" th:action="@{./login}" th:object="${usr}" method="post">
+	Enter User Name : <input type="text" th:field="*{userName}"><br><br>
+	Enter password : <input type="password" th:field="*{password}"><br><br>
+	<input type="submit" value="Login">
+</form>
+
+<div th:text="${message}" style="color:red"></div>
+</body>
+</html>
