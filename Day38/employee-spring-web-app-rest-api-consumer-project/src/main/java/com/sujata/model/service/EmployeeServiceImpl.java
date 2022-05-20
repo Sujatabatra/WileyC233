@@ -1,9 +1,13 @@
 package com.sujata.model.service;
 
+
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,7 +29,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public boolean deleteEmployeeById(int empId) {
-		// TODO Auto-generated method stub
+		HttpHeaders headers=new HttpHeaders();
+		HttpEntity<Employee> entity=new HttpEntity<Employee>(headers);
+		Employee emp=restTemplate.exchange("http://localhost:8084/employees/"+empId,
+				HttpMethod.DELETE,entity,Employee.class).getBody();
+		if(emp!=null)
+			return true;
 		return false;
 	}
 
