@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.datatype.jdk8.OptionalDoubleSerializer;
 import com.sujata.entity.Employee;
+import com.sujata.entity.EmployeeList;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -30,14 +31,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public boolean addEmployee(Employee employee) {
-		// TODO Auto-generated method stub
+		Employee emp=restTemplate.postForObject("http://localhost:8084/employees", employee, Employee.class);
+		if(emp!=null)
+			return true;
 		return false;
 	}
 
 	@Override
 	public List<Employee> getAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
+		EmployeeList employeeList=restTemplate.getForObject("http://localhost:8084/employees", EmployeeList.class);
+		return employeeList.getEmployees();
 	}
 
 	@Override

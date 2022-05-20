@@ -139,23 +139,23 @@ public class EmployeeController {
 		return modelAndView;
 	}
 	
-//	@ModelAttribute("empDesignations")
-//	public List<String> getDesignationNames(){
-//		return employeeService.getAllEmployees()
-//		.stream()
-//		.map(Employee::getEmpDesignation)
-//		.distinct()
-//		.collect(Collectors.toList());
-//	}
+	@ModelAttribute("empDesignations")
+	public List<String> getDesignationNames(){
+		return employeeService.getAllEmployees()
+		.stream()
+		.map(Employee::getEmpDesignation)
+		.distinct()
+		.collect(Collectors.toList());
+	}
 	
-//	@ModelAttribute("empDepartments")
-//	public List<String> getDepartmentNames(){
-//		return employeeService.getAllEmployees()
-//		.stream()
-//		.map(Employee::getEmpDepartment)
-//		.distinct()
-//		.collect(Collectors.toList());
-//	}
+	@ModelAttribute("empDepartments")
+	public List<String> getDepartmentNames(){
+		return employeeService.getAllEmployees()
+		.stream()
+		.map(Employee::getEmpDepartment)
+		.distinct()
+		.collect(Collectors.toList());
+	}
 	
 	@RequestMapping("/logout")
 	public ModelAndView logoutController(HttpSession session) {
