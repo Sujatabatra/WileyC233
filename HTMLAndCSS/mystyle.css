@@ -1,0 +1,20 @@
+body{
+    background-color:cadetblue;
+    background-image: url("./flower.jpg");
+    background-repeat: no-repeat;
+}
+/*
+p,th,h2{
+    color:brown;
+}
+*/
+
+.classA{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: cornflowerblue;
+}
+
+#para2{
+    font-size: 16px;
+    color: burlywood;
+}
