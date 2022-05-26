@@ -1,0 +1,20 @@
+<p>address-card works!</p>
+<pre>
+Name : {{user.name}}
+Title: {{user.title}}
+Address:{{user.address}}
+<!--
+{{user.phone[0]}}
+{{user.phone[1]}}
+-->
+</pre>
+
+
+<div *ngIf="user.phone.length>0">
+
+    <p>Phone</p>
+    <p *ngFor="let phoneNumber of user.phone">
+        {{phoneNumber}}
+    </p>
+   
+</div>
