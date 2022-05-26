@@ -1,0 +1,17 @@
+<h1>hello</h1>
+
+<input type="text" [(ngModel)]="title"/>
+
+<h2>{{title}}</h2>
+
+
+<form #login="ngForm" (ngSubmit)="check(login)">
+  Enter User Name : <input type="text" name="username" ngModel/><br>
+  Enter Password : <input type="password" name="password" ngModel/><br>
+  <input type="submit"/>
+</form>
+<div *ngIf="status" style="font-weight: bold">
+ Login:  {{status}}
+</div>
+
+
