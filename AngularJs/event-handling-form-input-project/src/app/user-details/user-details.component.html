@@ -1,0 +1,24 @@
+<p>user-details works!</p>
+
+<h1>User Name:</h1>
+  <h3>{{userObj.fName}}  {{userObj.lName}}</h3>
+  <h3>User address</h3>
+  <p>{{userObj.address}}</p>
+  <!--
+  <button (click)="toggleCollapse()">Expand/Collapse</button>
+  -->
+  
+  <button *ngIf="isCollapse" (click)="toggleCollapse()">Expand</button>
+  <button *ngIf="!isCollapse" (click)="toggleCollapse()">Collapse</button>
+  
+  <div *ngIf="!isCollapse">
+    Phone Nos
+    <p *ngFor="let phoneNumber of userObj.phoneNo">{{phoneNumber}}</p>
+    
+  </div>
+  <input type="text" [(ngModel)]="inputText">
+
+  {{inputText}}
+  <!--
+</div>
+-->
