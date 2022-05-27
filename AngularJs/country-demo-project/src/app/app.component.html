@@ -1,0 +1,10 @@
+<span>{{ title }} app is running!</span>
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+  Enter First Name : <input type="text" name="firstName" ngModel><br><br>
+  Select Gender : <input type="radio" value="Male" name="gender" ngModel>Male
+  <input type="radio" value="female" name="gender" ngModel>Female<br><br>
+  Select Country: <select name="country" ngModel>
+    <option *ngFor="let c of countryList" [ngValue]="c.id">{{c.name}}</option>
+  </select><br><br>
+  <input type="submit">
+</form>
