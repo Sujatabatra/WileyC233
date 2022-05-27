@@ -1,0 +1,30 @@
+    <span>{{ title }} app is running!</span>
+<div class="container">
+  <h2>User Data</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Name : </label>
+      <input type="text" formControlName="name">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" formControlName="email">
+    </div>
+    <div formGroupName="address">
+      <div>
+        <label>Street</label>
+        <input type="text" formControlName="street">
+      </div>
+      <div>
+        <label>City</label>
+        <input type="text" formControlName="city">
+      </div>
+      <div>
+        <label>Postal Code</label>
+        <input type="text" formControlName="postalcode">
+      </div>
+    </div>
+    <input type="submit">
+  </form>
+
+</div>
