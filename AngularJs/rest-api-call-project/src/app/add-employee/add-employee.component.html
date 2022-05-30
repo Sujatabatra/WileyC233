@@ -1,0 +1,13 @@
+<p>add-employee works!</p>
+
+<form #employeeDetails="ngForm" (ngSubmit)="saveEmployee(employeeDetails)">
+    Enter Employee Id : <input type="text" name="empId" ngModel/><br>
+    Enter Employee Name : <input type="text" name="empName" ngModel/><br>
+    Enter Employee Department : <input type="text" name="empDepartment" ngModel/><br>
+    Enter Employee Designation : <input type="text" name="empDesignation" ngModel/><br>
+    Enter Employee Salary : <input type="text" name="empSalary" ngModel/><br>
+    <input type="submit"/>
+  </form>
+
+  <div>{{status}}</div>
+  

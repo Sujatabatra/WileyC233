@@ -1,0 +1,20 @@
+<p>employeelist works!</p>
+<button type="button" (click)="getEmployeeList()">Get EmployeeList</button>
+<p>employeelist works!</p>
+<h2>Employee Details</h2>
+<table border="1">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let emp of employeelist">
+        <td>{{emp.empId}}</td>
+        <td>{{emp.empName}}</td>
+        <td>{{emp.empDepartment}}</td>
+        <td>{{emp.empDesignation}}</td>
+        <td>{{emp.empSalary}}</td>
+    </tr>
+</table>
