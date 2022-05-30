@@ -1,0 +1,16 @@
+
+<span>{{ title }} app is running!</span>
+<br>
+<a *ngFor="let route of routes" 
+[routerLink]="route.url">{{route.linkName}}</a>
+<!--
+<a [routerLink]="homeRoute">Home</a><br><br>
+<a routerLink="/settings">Setting</a><br><br>
+<a routerLink="/profile">Profile</a><br><br>
+-->
+<!--
+<a href="/home">Home</a><br><br>
+<a href="/settings">Setting</a><br><br>
+<a href="/profile">Profile</a><br><br>
+-->
+<router-outlet></router-outlet>
